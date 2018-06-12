@@ -36,4 +36,5 @@ npm install C:/Users/----/AppData/npm/node_modules/node-omron-read
 ### Usage
 
 * Restart Node-RED and there's the thingy now
+![ScreenShot]("../../tree/master/images/example.png")
 <img align="left" src="../../tree/master/images/example.png" />
