@@ -1,0 +1,56 @@
+<script type="text/javascript">
+    RED.nodes.registerType('FINS Read',{
+        category: 'OMRON',
+        color: '#cccccc',
+        defaults: {
+            name:    {value:""},
+	    topic:   {value:""},
+	    plc_ip:      {value:""},
+	    plc_port:    {value:"9600"},
+	    point_address: {value:"D10"},
+	    point_size:    {value:"2"}
+        },
+        inputs:1,
+        outputs:1,
+	inputLabels: "Trigger request",
+	outputLabels: "Returned values",
+	align: "left",
+	icon: "arrow-in.png",
+        label: function() {
+            return this.name||"FINS Read";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="FINS Read">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-plc_ip"><i class="icon-tag"></i> <span data-i18n="omron-read.label.plc_ip">IP</span></label>
+        <input type="text" id="node-input-plc_ip" placeholder="192.168.x.x">
+    </div>
+     <div class="form-row">
+        <label for="node-input-plc_port"><i class="icon-tag"></i> <span data-i18n="omron-read.label.plc_port">Port</span></label>
+        <input type="text" id="node-input-plc_port" placeholder="9600">
+    </div>
+    <div class="form-row">
+        <label for="node-input-point_address"><i class="icon-tag"></i> <span data-i18n="omron-read.label.point_address">Address</span></label>
+        <input type="text" id="node-input-point_address" placeholder="D10 or something">
+    </div>
+    <div class="form-row">
+        <label for="node-input-point_size"><i class="icon-tag"></i> <span data-i18n="omron-read.label.point_size"></span>Array size</label>
+        <input type="text" id="node-input-point_size" placeholder="2">
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="FINS Read">
+    <p>Reading data using Node-RED from OMRON PLCs using the FINS protocol<br/>
+    </p>
+</script>

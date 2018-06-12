@@ -1,0 +1,14 @@
+{
+    "name": "node-omron-read",
+    "version": "0.0.1",
+    "description": "Reading data using Node-RED from OMRON PLCs over Ethernet FINS protocol",
+    "dependencies": {},
+    "keywords": [
+        "node-red"
+    ],
+    "node-red": {
+        "nodes": {
+            "sample": "omron-read/read.js"
+        }
+    }
+}
