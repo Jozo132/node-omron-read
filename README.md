@@ -36,5 +36,4 @@ npm install C:/Users/----/AppData/npm/node_modules/node-omron-read
 ### Usage
 
 * Restart Node-RED and there's the thingy now
-![ScreenShot](https://github.com/Jozo132/node-omron-read/blob/master/images/example.png)
 <img align="left" src=https://github.com/Jozo132/node-omron-read/blob/master/images/example.png />
