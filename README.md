@@ -1,7 +1,7 @@
-# node-omron-read
+node-omron-read
 ===============
 ### Overview
-This is a Node-RED node module to directly interface OMRON PLCs over FINS Ethernet protocol. For now it only supports direct data readout from memory but it's VERY use friendly. More functions will be added when needed.
+This is a Node-RED node module to directly interface OMRON PLCs over FINS Ethernet protocol. For now it only supports direct data readout from memory but it's VERY user friendly. More functions will be added when needed.
 Credits to [Patrick Servello (patrick--)](https://github.com/patrick--) for his implementation of the FINS node backbone.
 
 ### Prerequisites for Windows
