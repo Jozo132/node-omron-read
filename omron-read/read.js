@@ -9,9 +9,8 @@ module.exports = function(RED) {
 
 		var context = this.context();
 		var node = this;
-		
+
 		var fins = require('omron-fins');
-		
 		var client = fins.FinsClient(parseInt(node.plc_port),node.plc_ip);
 
 		client.on('error',function(error) {
@@ -24,6 +23,13 @@ module.exports = function(RED) {
 			console.log("Replying to issued command of: ", msg.command);
 			console.log("Response code of: ", msg.code);
 			console.log("Data returned: ", msg.values);
+			var outDetail = [];
+			for(var x in msg.values){
+				var buff_address = config.point_address.charAt(0) + ":" + String(   parseInt(config.point_address.slice(1)) + x   );
+				var buff_value   = String(msg.values[x]);
+				outDetail[x] = buff_address + ":" + buff_value;
+			}
+			msg.detail = outDetail;
 			msg.payload = msg.values;
 			node.send(msg);
 		});
@@ -32,7 +38,7 @@ module.exports = function(RED) {
 			var outMsg = {payload: "Requsting from " + node.plc_ip + ":" + node.plc_port + " point(s) " + node.point_address + " with a size of " + node.point_size + " ..."};
 			client.read(node.point_address, parseInt(node.point_size));
 			console.log(outMsg);
-			});
+		});
     }
     RED.nodes.registerType("FINS Read",omronRead);
 };
