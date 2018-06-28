@@ -2,6 +2,8 @@ module.exports = function(RED) {
     function omronRead(config) {
 		RED.nodes.createNode(this,config);
 
+		this.name	       = config.name;
+		this.topic	       = config.topic;
 		this.plc_ip            = config.plc_ip;
 		this.plc_port          = config.plc_port;
 		this.point_address     = config.point_address;
@@ -29,6 +31,8 @@ module.exports = function(RED) {
 				var buff_value   = String(msg.values[x]);
 				outDetail[x] = buff_address + ":" + buff_value;
 			}
+			msg.name = node.name;
+			msg.topic = node.topic;
 			msg.detail = outDetail;
 			msg.payload = msg.values;
 			node.send(msg);
