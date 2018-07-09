@@ -12,7 +12,7 @@ module.exports = function(RED) {
 		var context = this.context();
 		var node = this;
 
-		var fins = require('omron-fins');
+		var fins = require('./omron-fins.js');
 		var client = fins.FinsClient(parseInt(node.plc_port),node.plc_ip);
 
 		client.on('error',function(error) {
