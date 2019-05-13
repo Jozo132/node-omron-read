@@ -29,6 +29,14 @@ cd ~/.node-red
 npm install C:/Users/----/AppData/npm/node_modules/node-omron-read
 ```
 
+### Install for Linux (Ubuntu)
+Open global node_modules folder, clone as superuser (sudo) and npm install the module into node-red
+```sh
+cd /usr/local/lib/node_modules
+sudo git clone https://github.com/Jozo132/node-omron-read.git
+npm install --prefix ~/.node-red node-omron-read
+```
+
 ### Usage
 
 * Restart Node-RED and there's the thingy now
